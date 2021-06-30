@@ -23,26 +23,19 @@ class DashboardViewController: UIViewController {
         
     }
     
-    
-    
     //MARK:- getMostPopularGitRepoApiCall
     func getMostPopularGitRepoApiCall(page_number:Int){
         
         RestClient.sharedInstance.getMostPopularGitRepo(SUB_URL,page:page_number,per_page_count: PER_PAGE_COUNT, viewcontroller: self){ (dict) in
-            if let response = dict {
-                print(response)
-                self.totalPageNo = response["total_count"] as? Int ?? 0
-                if let itemsList = response["items"] as? [Dictionary<String,Any>] {
-                    for repo in itemsList {
-                        let modal = RepoModel.init(dict: repo)
-                        self.repoList.append(modal)
-                    }
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
             
+            let repoSearchModel = Parser.convetToRepoSearchModel(json:dict ?? [:])
+            self.repoList.append(contentsOf: repoSearchModel.repoItems)
+            self.totalPageNo = repoSearchModel.totalRepo
+
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
+
         }
     }
     

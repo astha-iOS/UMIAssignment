@@ -30,7 +30,8 @@ class DetailViewController: UIViewController {
     
     //MARK:- scheduledTimerWithTimeInterval
     func scheduledTimerWithTimeInterval(){
-        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.refreshRepo), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshRepo), userInfo: nil, repeats: true)
+
     }
     
     //MARK:- Refresh Repo
@@ -40,7 +41,6 @@ class DetailViewController: UIViewController {
     
     //MARK:- getMostPopularGitRepoApiCall
     func getRepoDetail(){
-        
         RestClient.sharedInstance.getRepoDetail(detailURL, viewcontroller: self){ (dict) in
             if dict != nil {
                 let obj = RepoModel.init(dict: dict!)
@@ -63,5 +63,11 @@ class DetailViewController: UIViewController {
             starsLabel.text = "Stars : \(data.stargazers_count)"
             language.text = "Langauge : \(data.language)"
         }
+    }
+    
+    //MARK:- viewWillDisappear
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        timer.invalidate()
     }
 }

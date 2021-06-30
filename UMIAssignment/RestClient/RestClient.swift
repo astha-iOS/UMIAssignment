@@ -38,7 +38,6 @@ class RestClient {
                 
                 completion(response)
                 
-                
             }catch let error as NSError{
                 os_log("Failed to parse response from api: %@ \n Cause by: %@ ", log: .default, type: .error, url, String(describing: error))
                 completion(nil)
