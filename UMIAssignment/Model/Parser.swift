@@ -11,14 +11,14 @@ import UIKit
 class Parser {
     
     static func convetToRepoSearchModel(json:Dictionary<String, Any>)-> RepoSearchModel{
-        var repoList = [RepoModel]()
+        var repoItems = [RepoModel]()
         let totalRepoCount = json["total_count"] as? Int ?? 0
         if let itemsList = json["items"] as? [Dictionary<String,Any>] {
             for repo in itemsList {
                 let obj = RepoModel.init(dict: repo)
-                repoList.append(obj)
+                repoItems.append(obj)
             }
         }
-        return RepoSearchModel(repoCount: totalRepoCount, repoItems: repoList)
+        return RepoSearchModel(repoCount: totalRepoCount, repoItems: repoItems)
     }
 }

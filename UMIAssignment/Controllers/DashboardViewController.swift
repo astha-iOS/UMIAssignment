@@ -25,12 +25,12 @@ class DashboardViewController: UIViewController {
     
     //MARK:- getMostPopularGitRepoApiCall
     func getMostPopularGitRepoApiCall(page_number:Int){
+        let pageRequest = PageRequestModel (pageNumber: page, pageSize: PAGE_SIZE)
         
-        RestClient.sharedInstance.getMostPopularGitRepo(SUB_URL,page:page_number,per_page_count: PER_PAGE_COUNT, viewcontroller: self){ (dict) in
+        RestClient.sharedInstance.getMostPopularGitRepo(pageRequest: pageRequest, viewcontroller: self){ (repoSearchModel) in
             
-            let repoSearchModel = Parser.convetToRepoSearchModel(json:dict ?? [:])
-            self.repoList.append(contentsOf: repoSearchModel.repoItems)
-            self.totalPageNo = repoSearchModel.totalRepo
+            self.repoList.append(contentsOf: repoSearchModel!.repoItems)
+            self.totalPageNo = repoSearchModel!.totalRepo
 
             DispatchQueue.main.async {
                 self.tableView.reloadData()

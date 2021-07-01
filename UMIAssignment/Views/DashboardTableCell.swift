@@ -19,11 +19,11 @@ class DashboardTableCell: UITableViewCell {
         // Initialization code
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
     public func configure(with repo: RepoModel? = nil, indexPath:IndexPath) {
         if let data = repo {
             titleLabel.text = data.name

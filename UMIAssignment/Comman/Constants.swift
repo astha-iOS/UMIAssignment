@@ -8,8 +8,8 @@
 import UIKit
 
 let BASE_URL = "https://api.github.com/"
-let SUB_URL = "search/repositories"
-let PER_PAGE_COUNT = 20
+let SEARCH_REPO_PATH = "search/repositories"
+let PAGE_SIZE = 20
 
 
 

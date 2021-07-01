@@ -17,6 +17,8 @@
 		0745EEF72689882000CA26B8 /* UMIAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EEF62689882000CA26B8 /* UMIAssignmentUITests.swift */; };
 		0745EF152689893D00CA26B8 /* DashboardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EF142689893D00CA26B8 /* DashboardTableCell.swift */; };
 		0745EF1E2689896700CA26B8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EF1D2689896700CA26B8 /* DashboardViewController.swift */; };
+		07713572268D62F200E6E0FD /* PageRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07713571268D62F200E6E0FD /* PageRequestModel.swift */; };
+		07713578268D710700E6E0FD /* RespoSearchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 07713577268D710700E6E0FD /* RespoSearchResponse.json */; };
 		07D8ED7B2689EA3F006D4C40 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8ED7A2689EA3F006D4C40 /* RestClient.swift */; };
 		07D8ED802689EACA006D4C40 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8ED7F2689EACA006D4C40 /* Constants.swift */; };
 		07D8ED8E268B0445006D4C40 /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8ED8D268B0445006D4C40 /* RepoModel.swift */; };
@@ -25,6 +27,7 @@
 		07F4B920268CD60700D35AC4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 07F4B91F268CD60700D35AC4 /* README.md */; };
 		07F4B925268CE2D500D35AC4 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4B924268CE2D500D35AC4 /* Parser.swift */; };
 		07F4B92A268CE60100D35AC4 /* RepoSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4B929268CE60100D35AC4 /* RepoSearchModel.swift */; };
+		07F4B92F268D5A5500D35AC4 /* ParserUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4B92E268D5A5500D35AC4 /* ParserUnitTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,8 @@
 		0745EEF82689882000CA26B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0745EF142689893D00CA26B8 /* DashboardTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableCell.swift; sourceTree = "<group>"; };
 		0745EF1D2689896700CA26B8 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		07713571268D62F200E6E0FD /* PageRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageRequestModel.swift; sourceTree = "<group>"; };
+		07713577268D710700E6E0FD /* RespoSearchResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RespoSearchResponse.json; sourceTree = "<group>"; };
 		07D8ED7A2689EA3F006D4C40 /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		07D8ED7F2689EACA006D4C40 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07D8ED8D268B0445006D4C40 /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		07F4B91F268CD60700D35AC4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		07F4B924268CE2D500D35AC4 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		07F4B929268CE60100D35AC4 /* RepoSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoSearchModel.swift; sourceTree = "<group>"; };
+		07F4B92E268D5A5500D35AC4 /* ParserUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserUnitTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +146,10 @@
 		0745EEEA2689882000CA26B8 /* UMIAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				07713576268D70D000E6E0FD /* Resource */,
 				0745EEEB2689882000CA26B8 /* UMIAssignmentTests.swift */,
 				0745EEED2689882000CA26B8 /* Info.plist */,
+				07F4B92E268D5A5500D35AC4 /* ParserUnitTest.swift */,
 			);
 			path = UMIAssignmentTests;
 			sourceTree = "<group>";
@@ -172,6 +180,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		07713576268D70D000E6E0FD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				07713577268D710700E6E0FD /* RespoSearchResponse.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		07D8ED792689EA29006D4C40 /* RestClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +202,7 @@
 				07D8ED8D268B0445006D4C40 /* RepoModel.swift */,
 				07F4B929268CE60100D35AC4 /* RepoSearchModel.swift */,
 				07F4B924268CE2D500D35AC4 /* Parser.swift */,
+				07713571268D62F200E6E0FD /* PageRequestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07713578268D710700E6E0FD /* RespoSearchResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +356,7 @@
 				0745EF1E2689896700CA26B8 /* DashboardViewController.swift in Sources */,
 				0745EED72689881F00CA26B8 /* SceneDelegate.swift in Sources */,
 				07D8ED802689EACA006D4C40 /* Constants.swift in Sources */,
+				07713572268D62F200E6E0FD /* PageRequestModel.swift in Sources */,
 				07D8ED7B2689EA3F006D4C40 /* RestClient.swift in Sources */,
 				07F4B92A268CE60100D35AC4 /* RepoSearchModel.swift in Sources */,
 				0745EF152689893D00CA26B8 /* DashboardTableCell.swift in Sources */,
@@ -348,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F4B92F268D5A5500D35AC4 /* ParserUnitTest.swift in Sources */,
 				0745EEEC2689882000CA26B8 /* UMIAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

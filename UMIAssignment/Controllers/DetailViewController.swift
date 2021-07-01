@@ -20,10 +20,10 @@ class DetailViewController: UIViewController {
     var repoDict:RepoModel?
     var detailURL = String()
     var timer = Timer()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         getRepoDetail()
         scheduledTimerWithTimeInterval()
     }
@@ -31,7 +31,7 @@ class DetailViewController: UIViewController {
     //MARK:- scheduledTimerWithTimeInterval
     func scheduledTimerWithTimeInterval(){
         timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshRepo), userInfo: nil, repeats: true)
-
+        
     }
     
     //MARK:- Refresh Repo
@@ -45,9 +45,9 @@ class DetailViewController: UIViewController {
             if dict != nil {
                 let obj = RepoModel.init(dict: dict!)
                 self.repoDict = obj
-                    DispatchQueue.main.async {
-                        self.setData()
-                    }
+                DispatchQueue.main.async {
+                    self.setData()
+                }
             }
         }
     }
